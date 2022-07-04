@@ -127,6 +127,7 @@
         <module>plugin/trino-http-event-listener</module>
         <module>plugin/trino-iceberg</module>
         <module>plugin/trino-jmx</module>
+        <module>plugin/trino-joom-delta-lake</module>
         <module>plugin/trino-kafka</module>
         <module>plugin/trino-kinesis</module>
         <module>plugin/trino-kudu</module>
@@ -248,6 +249,19 @@
             <dependency>
                 <groupId>io.trino</groupId>
                 <artifactId>trino-delta-lake</artifactId>
+                <type>test-jar</type>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.trino</groupId>
+                <artifactId>trino-joom-delta-lake</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.trino</groupId>
+                <artifactId>trino-joom-delta-lake</artifactId>
                 <type>test-jar</type>
                 <version>${project.version}</version>
             </dependency>
