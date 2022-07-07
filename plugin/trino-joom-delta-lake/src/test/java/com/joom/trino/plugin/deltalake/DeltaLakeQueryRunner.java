@@ -47,7 +47,7 @@ import static org.testng.util.Strings.isNullOrEmpty;
 public final class DeltaLakeQueryRunner
 {
     private static final Logger log = Logger.get(DeltaLakeQueryRunner.class);
-    public static final String DELTA_CATALOG = "joom-delta_lake";
+    public static final String DELTA_CATALOG = "joom_delta_lake";
     public static final String TPCH_SCHEMA = "tpch";
 
     private DeltaLakeQueryRunner() {}
