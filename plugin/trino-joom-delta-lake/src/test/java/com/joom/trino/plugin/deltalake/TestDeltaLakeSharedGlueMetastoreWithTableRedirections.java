@@ -70,7 +70,7 @@ public class TestDeltaLakeSharedGlueMetastoreWithTableRedirections
         queryRunner.installPlugin(new DeltaLakePlugin());
         queryRunner.createCatalog(
                 "delta_with_redirections",
-                "delta-lake",
+                "joom-delta-lake",
                 ImmutableMap.<String, String>builder()
                         .put("hive.metastore", "glue")
                         .put("hive.metastore.glue.default-warehouse-dir", dataDirectory.toString())
