@@ -255,19 +255,6 @@
 
             <dependency>
                 <groupId>io.trino</groupId>
-                <artifactId>trino-joom-delta-lake</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.trino</groupId>
-                <artifactId>trino-joom-delta-lake</artifactId>
-                <type>test-jar</type>
-                <version>${project.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>io.trino</groupId>
                 <artifactId>trino-elasticsearch</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -338,6 +325,19 @@
             <dependency>
                 <groupId>io.trino</groupId>
                 <artifactId>trino-jmx</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.trino</groupId>
+                <artifactId>trino-joom-delta-lake</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.trino</groupId>
+                <artifactId>trino-joom-delta-lake</artifactId>
+                <type>test-jar</type>
                 <version>${project.version}</version>
             </dependency>
 
