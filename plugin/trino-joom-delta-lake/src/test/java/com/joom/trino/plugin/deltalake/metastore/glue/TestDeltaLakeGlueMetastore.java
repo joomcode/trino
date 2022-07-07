@@ -171,7 +171,7 @@ public class TestDeltaLakeGlueMetastore
     public void testHideNonDeltaLakeTable()
             throws Exception
     {
-        SchemaTableName deltaLakeTable = new SchemaTableName(databaseName, "delta_lake_table_" + randomName());
+        SchemaTableName deltaLakeTable = new SchemaTableName(databaseName, "joom_delta_lake_table_" + randomName());
         SchemaTableName nonDeltaLakeTable1 = new SchemaTableName(databaseName, "hive_table_" + randomName());
         SchemaTableName nonDeltaLakeTable2 = new SchemaTableName(databaseName, "hive_table_" + randomName());
         SchemaTableName nonDeltaLakeView1 = new SchemaTableName(databaseName, "hive_view_" + randomName());

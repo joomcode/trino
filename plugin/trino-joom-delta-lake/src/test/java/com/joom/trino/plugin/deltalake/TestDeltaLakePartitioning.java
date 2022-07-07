@@ -139,7 +139,7 @@ public class TestDeltaLakePartitioning
     {
         assertQueryFails(
                 "SELECT * FROM \"partitions$partitions\"",
-                ".*'delta_lake\\.tpch\\.partitions\\$partitions' does not exist");
+                ".*'joom_delta_lake\\.tpch\\.partitions\\$partitions' does not exist");
     }
 
     @Test

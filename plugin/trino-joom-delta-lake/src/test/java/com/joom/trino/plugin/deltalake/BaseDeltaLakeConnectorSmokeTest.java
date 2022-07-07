@@ -279,7 +279,7 @@ public abstract class BaseDeltaLakeConnectorSmokeTest
     public void testCreateTableThatAlreadyExists()
     {
         assertQueryFails("CREATE TABLE person (a int, b int) WITH (location = '" + getLocationForTable(bucketName, "different_person") + "')",
-                format(".*Table 'delta_lake.%s.person' already exists.*", SCHEMA));
+                format(".*Table 'joom_delta_lake.%s.person' already exists.*", SCHEMA));
     }
 
     @Test
@@ -300,7 +300,7 @@ public abstract class BaseDeltaLakeConnectorSmokeTest
         assertThat(computeActual("SHOW CREATE TABLE person").getOnlyValue())
                 .isInstanceOf(String.class)
                 .isEqualTo(format(
-                        "CREATE TABLE delta_lake.%s.person (\n" +
+                        "CREATE TABLE joom_delta_lake.%s.person (\n" +
                                 "   name varchar,\n" +
                                 "   age integer,\n" +
                                 "   married boolean,\n" +
@@ -1373,13 +1373,13 @@ public abstract class BaseDeltaLakeConnectorSmokeTest
     {
         assertQueryFails(
                 "ALTER TABLE no_such_table_exists EXECUTE OPTIMIZE",
-                format("line 1:1: Table 'delta_lake.%s.no_such_table_exists' does not exist", SCHEMA));
+                format("line 1:1: Table 'joom_delta_lake.%s.no_such_table_exists' does not exist", SCHEMA));
         assertQueryFails(
                 "ALTER TABLE nation EXECUTE OPTIMIZE (file_size_threshold => '33')",
-                "\\QUnable to set catalog 'delta_lake' table procedure 'OPTIMIZE' property 'file_size_threshold' to ['33']: size is not a valid data size string: 33");
+                "\\QUnable to set catalog 'joom_delta_lake' table procedure 'OPTIMIZE' property 'file_size_threshold' to ['33']: size is not a valid data size string: 33");
         assertQueryFails(
                 "ALTER TABLE nation EXECUTE OPTIMIZE (file_size_threshold => '33s')",
-                "\\QUnable to set catalog 'delta_lake' table procedure 'OPTIMIZE' property 'file_size_threshold' to ['33s']: Unknown unit: s");
+                "\\QUnable to set catalog 'joom_delta_lake' table procedure 'OPTIMIZE' property 'file_size_threshold' to ['33s']: Unknown unit: s");
     }
 
     @Test
