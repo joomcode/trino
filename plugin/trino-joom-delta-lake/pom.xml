@@ -6,7 +6,7 @@
         <groupId>io.trino</groupId>
         <artifactId>trino-root</artifactId>
         <version>385</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>trino-joom-delta-lake</artifactId>
