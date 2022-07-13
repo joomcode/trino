@@ -18,24 +18,27 @@ import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
 import com.amazonaws.auth.WebIdentityTokenCredentialsProvider;
 
-
-public class WitAWSCredentialsProviderChain extends AWSCredentialsProviderChain {
+public class WitAWSCredentialsProviderChain extends AWSCredentialsProviderChain
+{
     private static final WitAWSCredentialsProviderChain INSTANCE
             = createProviderChain();
 
-    private static WitAWSCredentialsProviderChain createProviderChain() {
+    private static WitAWSCredentialsProviderChain createProviderChain()
+    {
         WitAWSCredentialsProviderChain instance = new WitAWSCredentialsProviderChain();
         instance.setReuseLastProvider(false);
         return instance;
     }
 
-    public WitAWSCredentialsProviderChain() {
+    public WitAWSCredentialsProviderChain()
+    {
         super(new EnvironmentVariableCredentialsProvider(),
                 new SystemPropertiesCredentialsProvider(),
                 WebIdentityTokenCredentialsProvider.create());
     }
 
-    public static WitAWSCredentialsProviderChain getInstance() {
+    public static WitAWSCredentialsProviderChain getInstance()
+    {
         return INSTANCE;
     }
 }
