@@ -979,7 +979,7 @@ public class TrinoS3FileSystem
         // use configured credentials or default chain with optional role
         AWSCredentialsProvider provider = getAwsCredentials(conf)
                 .map(value -> (AWSCredentialsProvider) new AWSStaticCredentialsProvider(value))
-                .orElseGet(DefaultAWSCredentialsProviderChain::getInstance);
+                .orElseGet(WitAWSCredentialsProviderChain::getInstance);
 
         if (iamRole != null) {
             String stsEndpointOverride = conf.get(S3_STS_ENDPOINT);
