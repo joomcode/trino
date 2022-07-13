@@ -18,7 +18,8 @@ import com.amazonaws.auth.EnvironmentVariableCredentialsProvider;
 import com.amazonaws.auth.SystemPropertiesCredentialsProvider;
 import com.amazonaws.auth.WebIdentityTokenCredentialsProvider;
 
-public class WitAWSCredentialsProviderChain extends AWSCredentialsProviderChain
+public class WitAWSCredentialsProviderChain
+        extends AWSCredentialsProviderChain
 {
     private static final WitAWSCredentialsProviderChain INSTANCE
             = createProviderChain();
