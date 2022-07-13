@@ -28,6 +28,7 @@ import io.trino.plugin.hive.HiveConfig;
 import io.trino.plugin.hive.s3.HiveS3Config;
 import io.trino.plugin.hive.s3.TrinoS3FileSystem;
 import io.trino.plugin.hive.s3.TrinoS3FileSystemMetricCollector;
+import io.trino.plugin.hive.s3.WitAWSCredentialsProviderChain;
 import org.apache.hadoop.conf.Configuration;
 
 import javax.annotation.concurrent.GuardedBy;
@@ -150,7 +151,7 @@ public class TrinoS3ClientFactory
             return getCustomAWSCredentialsProvider(conf, providerClass);
         }
 
-        return DefaultAWSCredentialsProviderChain.getInstance();
+        return WitAWSCredentialsProviderChain.getInstance();
     }
 
     private static AWSCredentialsProvider getCustomAWSCredentialsProvider(Configuration conf, String providerClass)
